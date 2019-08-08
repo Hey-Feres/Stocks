@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title FStocks
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    link href="https://fonts.googleapis.com/css?family=Poppins:300,400,800" rel="stylesheet" /
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    =render 'layouts/header'
+    .d-flex.align-items-stretch
+      =render 'layouts/sidebar'
+      = yield
+

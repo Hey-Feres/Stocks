@@ -1,0 +1,56 @@
+    header.header
+      nav.navbar.navbar-expand-lg.px-4.py-2.bg-white.shadow
+        /a.sidebar-toggler.text-gray-500.mr-4.mr-lg-5.lead href="#" 
+          i.fa.fa-align-left
+        a.navbar-brand.font-weight-bold.text-uppercase.text-base href="index.html"  Hey Feres
+        ul.ml-auto.d-flex.align-items-center.list-unstyled.mb-0
+          li.nav-item
+            form#searchForm.ml-auto.d-none.d-lg-block
+              .form-group.position-relative.mb-0
+                button.position-absolute.bg-white.border-0.p-0 style=("top: -3px; left: 0;") type="submit" 
+                  /i.o-search-magnify-1.text-gray.text-lg 
+                input.form-control.form-control-sm.border-0.no-shadow.pl-4 placeholder=("Search ...") type="search" /
+          li.nav-item.dropdown.mr-3
+            a#notifications.nav-link.dropdown-toggle.text-gray-400.px-1 aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="http://example.com" 
+              i.fa.fa-bell
+              span.notification-icon
+            .dropdown-menu aria-labelledby="notifications" 
+              a.dropdown-item href="#" 
+                .d-flex.align-items-center
+                  .icon.icon-sm.bg-violet.text-white
+                    i.fa.fa-twitter
+                  .text.ml-2
+                    p.mb-0 You have 2 followers
+              a.dropdown-item href="#" 
+                .d-flex.align-items-center
+                  .icon.icon-sm.bg-green.text-white
+                    i.fa.fa-envelope
+                  .text.ml-2
+                    p.mb-0 You have 6 new messages
+              a.dropdown-item href="#" 
+                .d-flex.align-items-center
+                  .icon.icon-sm.bg-blue.text-white
+                    i.fa.fa-upload
+                  .text.ml-2
+                    p.mb-0 Server rebooted
+              a.dropdown-item href="#" 
+                .d-flex.align-items-center
+                  .icon.icon-sm.bg-violet.text-white
+                    i.fa.fa-twitter
+                  .text.ml-2
+                    p.mb-0 You have 2 followers
+              .dropdown-divider
+              a.dropdown-item.text-center href="#" 
+                small.font-weight-bold.headings-font-family.text-uppercase View all notifications
+          li.nav-item.dropdown.ml-auto
+            a#userInfo.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="http://example.com" 
+              img.img-fluid.rounded-circle.shadow alt=("Jason Doe") src="https://pbs.twimg.com/profile_images/1035187584425709568/A8Li5zAf_400x400.jpg" style=("max-width: 2.5rem;") /
+            .dropdown-menu aria-labelledby="userInfo" 
+              a.dropdown-item href="#" 
+                strong.d-block.text-uppercase.headings-font-family Bruno Feres
+                small Web Developer
+              .dropdown-divider
+              a.dropdown-item href="#"  Settings
+              a.dropdown-item href="#"  Activity log
+              .dropdown-divider
+              a.dropdown-item href="login.html"  Logout
