@@ -1,0 +1,11 @@
+- @stocks.each do |stock|
+	.stock-wrapper
+		/= image_tag("/stock/#{stock.symbol}/logo")
+		h4= "#{stock.company_name} - #{stock.symbol}"
+		h6=stock.primary_exchange
+		h6="Volume: #{stock.avg_total_volume}"
+		h6="Preço: $#{stock.iex_realtime_price}"
+		
+		
+
+		
