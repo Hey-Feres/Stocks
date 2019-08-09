@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'carrierwave'
-gem 'slim'
+gem 'slim-rails'
 gem 'rails_db'
 gem 'devise'
 gem "stock_quote"

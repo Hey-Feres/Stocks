@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'stock/show'
+  resources :stocks
   get 'home/index'
-  root to: 'home#index'
+  root to: 'stocks#index'
 end
