@@ -10,7 +10,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     =render 'layouts/header'
-    .d-flex.align-items-stretch
+    /.d-flex.align-items-stretch
       =render 'layouts/sidebar'
+    .pl-3.pr-3
+      .mt-3
       = yield
 

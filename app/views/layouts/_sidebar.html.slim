@@ -3,7 +3,6 @@
   .d-flex.justify-content-between
     .text-gray-400.text-uppercase.px-3.px-lg-4.py-4.font-weight-bold.small.headings-font-family Your Stocks
     i.fa.fa-plus.text-gray-400.px-3.px-lg-4.py-4.font-weight-bold.small
-  = render "stocks/form"  
   ul.sidebar-menu.list-unstyled
     /- @stocks.each do |stock|
       = link_to stock_path(stock) do
