@@ -1,6 +1,24 @@
 .row
 	.col-2#left-nav
 		.row
+			.col-6
+				= link_to  new_stock_path
+					.stock-wrapper.shadow
+						.d-flex.justify-content-center
+							h4.font-weight-bold.text-uppercase.text-white + 
+			.col-6
+				.stock-wrapper.shadow
+					.d-flex.justify-content-center
+						h4.font-weight-bold.text-uppercase.text-white Edit
+			/.col-6
+				.stock-wrapper.shadow
+					.d-flex.justify-content-center
+						h4.font-weight-bold.text-uppercase.text-danger Del All						
+			/.col-6
+				.stock-wrapper.shadow
+					.d-flex.justify-content-center
+						h4.font-weight-bold.text-uppercase.text-white.green Done						 
+					
 			- @stocks.each do |stock|
 				.col-12
 					.stock-wrapper.shadow
@@ -8,6 +26,7 @@
 							h4.font-weight-bold.text-uppercase.text-white= "#{stock.symbol}"
 							/h6="Volume: #{stock.avg_total_volume}"
 							h4="$ #{stock.iex_realtime_price}"
+							/h4.remove-stock -
 			.col-12
 				= link_to  new_stock_path
 					.stock-wrapper.shadow
@@ -45,4 +64,8 @@ css:
 		bottom: 20px;
 		left: 15px;
 		padding: 0 30px;
+	}
+	.remove-stock{
+		color: red;
+		font-weight: bold;
 	}
