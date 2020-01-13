@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   require 'news-api'
   def index
-	@stocks = StockQuote::Stock.quote("aapl, tsla, sbux, nke, cnk, mcd, amzn, fb, msft")
+  	query = Stock.all
+	@stocks = query.map{|stock| StockQuote::Stock.quote(stock.symbol)}
 
   	request = HTTParty.get("https://newsapi.org/v2/top-headlines?country=br&category=business&apiKey=dbd8a962d3004ce993c040c8a3f23ff6")
   	@articles = request['articles']
