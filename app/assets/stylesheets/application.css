@@ -31,8 +31,23 @@ body{
 .stock-wrapper {
 	background-color: #111;
 	color: #66ff66;
-	padding: 3%;
+	padding: 0 3%;
+	height: 70px;
 	margin-bottom: 8%;
 	border-radius: 10px;
 }
+.stock-wrapper h4 {
+	line-height: 70px;
+}
 .green{color: #66ff66 !important;}
+#left-nav{
+
+}
+.stock-news-wrapper{
+	background-color: #111;
+	color: #66ff66;
+	padding: 3%;
+	border-radius: 10px;
+	width: 100%;
+	height: auto;
+}

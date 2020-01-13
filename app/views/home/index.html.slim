@@ -1,15 +1,41 @@
 .row
-	- @stocks.each do |stock|
-		.col-sm-3
-			.stock-wrapper.shadow
-				/= image_tag("/stock/#{stock.symbol}/logo")
-				h3= "#{stock.symbol}"
-				/h6=stock.primary_exchange
-				h6="Volume: #{stock.avg_total_volume}"
-				h6="Preço: $#{stock.iex_realtime_price}"
-	.col-sm-3				
-		.stock-wrapper.shadow				
-			center
-				h3 Adicionar
-				h1="+"
+	.col-2#left-nav
+		.row
+			- @stocks.each do |stock|
+				.col-12
+					.stock-wrapper.shadow
+						.d-flex.justify-content-between
+							h4.font-weight-bold.text-uppercase.text-white= "#{stock.symbol}"
+							/h6="Volume: #{stock.avg_total_volume}"
+							h4="$ #{stock.iex_realtime_price}"
+	.col-10
+		.stock-news-wrapper
+			.row
+				- @articles.each do |article|
+					.col-3
+						a href="#{article['url']}"
+							.new-wrapper
+								h5.text-uppercase.text-white= article["title"].truncate(30)
+								.description
+									p.text-white.text-center= article["description"].truncate(200)
 
+
+css:
+	a, a:hover {
+		text-decoration: none;
+	}
+	.new-wrapper{
+		width: 300px;
+		height: 400px;
+		border-radius: 10px;
+		background: #000;
+		padding: 4% 5%;
+		margin-bottom: 5%;		
+	}
+	.description{
+		position: absolute;
+		width: 300px;
+		bottom: 20px;
+		left: 15px;
+		padding: 0 30px;
+	}
