@@ -1,20 +1,21 @@
 .row
 	.col-2#left-nav
 		.row
-			.col-6
+			.col-6#add
 				= link_to  new_stock_path
 					.stock-wrapper.shadow
 						.d-flex.justify-content-center
 							h4.font-weight-bold.text-uppercase.text-white + 
-			.col-6
+			.col-6#edit
 				.stock-wrapper.shadow
 					.d-flex.justify-content-center
 						h4.font-weight-bold.text-uppercase.text-white Edit
-			/.col-6
+			
+			.col-6#remove_all
 				.stock-wrapper.shadow
 					.d-flex.justify-content-center
 						h4.font-weight-bold.text-uppercase.text-danger Del All						
-			/.col-6
+			.col-6#done
 				.stock-wrapper.shadow
 					.d-flex.justify-content-center
 						h4.font-weight-bold.text-uppercase.text-white.green Done						 
@@ -27,7 +28,8 @@
 								h4.font-weight-bold.text-uppercase.text-white= "#{stock.symbol}"
 								/h6="Volume: #{stock.avg_total_volume}"
 								h4="$ #{stock.iex_realtime_price}"
-								/h4.remove-stock -
+								/#remove_stock
+									h4.remove-stock -
 			.col-12
 				= link_to  new_stock_path
 					.stock-wrapper.shadow
@@ -78,6 +80,28 @@ css:
 	}
 
 javascript:
+	$(document).ready(function(){
+	  $("#remove_all").hide();
+	  $("#done").hide();
+	  $("#remove_stock").hide();
+	  
+	  $("#edit").click(function(){
+	    $("#edit").hide(500);
+	    $("#add").hide(500);
+
+		$("#remove_all").show(500);
+		$("#done").show(500);
+		$("#remove_stock").show(500);
+	  });
+	  
+	  $("#done").click(function(){
+	    $("#edit").show(500);
+	    $("#add").show(500);
+
+		$("#remove_all").hide();
+		$("#done").hide(500);	    
+	  });
+	});
   $( function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
