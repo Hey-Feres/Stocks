@@ -19,14 +19,15 @@
 					.d-flex.justify-content-center
 						h4.font-weight-bold.text-uppercase.text-white.green Done						 
 					
-			- @stocks.each do |stock|
-				.col-12
-					.stock-wrapper.shadow
-						.d-flex.justify-content-between
-							h4.font-weight-bold.text-uppercase.text-white= "#{stock.symbol}"
-							/h6="Volume: #{stock.avg_total_volume}"
-							h4="$ #{stock.iex_realtime_price}"
-							/h4.remove-stock -
+			ul#sortable.col-12
+				- @stocks.each do |stock|
+					li
+						.stock-wrapper.shadow
+							.d-flex.justify-content-between
+								h4.font-weight-bold.text-uppercase.text-white= "#{stock.symbol}"
+								/h6="Volume: #{stock.avg_total_volume}"
+								h4="$ #{stock.iex_realtime_price}"
+								/h4.remove-stock -
 			.col-12
 				= link_to  new_stock_path
 					.stock-wrapper.shadow
@@ -50,6 +51,12 @@ css:
 	a, a:hover {
 		text-decoration: none;
 	}
+	#sortable, #sortable li {
+		width: 100%;
+	}
+	#sortable li {
+		list-style: none;
+	}
 	.new-wrapper{
 		width: 300px;
 		height: 400px;
@@ -69,3 +76,9 @@ css:
 		color: red;
 		font-weight: bold;
 	}
+
+javascript:
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  } );		

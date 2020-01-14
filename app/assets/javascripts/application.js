@@ -20,6 +20,7 @@
 //= require chart.js/dist/Chart
 //= require charts-custom
 //= require charts-home
+//= require jquery-ui
 //= require front
 //= require_tree .
 
